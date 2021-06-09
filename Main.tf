@@ -1,7 +1,5 @@
 provider "aws" {
     region  = "us-east-2"
-    access_key = "AKIAYQFNNZ3GXVBWN4OJ"
-    secret_key = "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"
 }
 # variable for subnet
 variable "pubsubnet" {
