@@ -233,7 +233,7 @@ resource "aws_ami_from_instance" "webserverAMI" {
 }
 # Creating LC
 resource "aws_launch_configuration" "LC_ASG" {
-    image_id = aws_ami_from_instance.webserverAMI.id
+    image_id = "aws_instance.webserver[0].id"
     instance_type = var.instance_type
 }
 resource "aws_autoscaling_group" "ASG" {
