@@ -67,8 +67,7 @@ resource "aws_eip" "eip" {
 #Creating NAT Gateway
 resource "aws_nat_gateway" "NAT_GW" {
     allocation_id = aws_eip.eip.id
-    count = length(var.pubsubnet)
-    subnet_id = element(aws_subnet.pubsub.*.id,count.index) 
+    subnet_id = "aws_subnet.pubsub[*].id" 
     tags = {
       "Name" = "NAT_GW"
     } 
